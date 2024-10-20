@@ -396,12 +396,8 @@ class TFinfo():
         
         # set parameters
         s.set_motifs(self.motifs)
-        try:
-            s.set_background(genome=self.ref_genome, size=background_length) # For gimmemotifs ver 14.4
-        except:
-            s.set_background(genome=self.ref_genome, length=background_length)# For old gimmemotifs ver 13
-
-        #s.set_background(genome="mm9", length=400)
+        s.set_background(genome=self.ref_genome, size=background_length) 
+        
         if verbose:
             print("Calculating FPR-based threshold. This step may take substantial time when you load a new ref-genome. It will be done quicker on the second time. \n")
         s.set_threshold(fpr=fpr)
